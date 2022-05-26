@@ -1,0 +1,23 @@
+{
+  "name": "battlefield",
+  "version": "1.0.0",
+  "description": "Online representation of Battlefield wooden puzzle game",
+  "main": "battlefield.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TravisHammonds/Battlefield.git"
+  },
+  "author": "Travis Hammonds",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TravisHammonds/Battlefield/issues"
+  },
+  "homepage": "https://github.com/TravisHammonds/Battlefield#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "path": "^0.12.7"
+  }
+}

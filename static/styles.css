@@ -1,0 +1,47 @@
+
+.main-content{
+    margin-top: 5%;
+}
+
+.puzzles {
+    margin-right: 60px;
+}
+
+.puzzle-list {
+    color: black;
+    line-height: 2.5;
+    font-size: 20px;
+    border-color: blue;
+}
+
+.board {
+    border: 5px solid brown;
+    height: 600px;
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 2%;
+    text-align: center;
+}
+
+.peg {
+    color: darkgreen;
+}
+
+.row {
+    margin: 10px;
+}
+
+
+
+.records {
+    margin-left: 60px;
+}
+
+.records-list {
+    border-color: blue;
+    color: black;
+    line-height: 2.5;
+    font-size: 20px;
+}
+
