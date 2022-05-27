@@ -24,15 +24,17 @@
     text-align: center;
 }
 
-.peg {
+.green-piece {
     color: darkgreen;
+}
+
+.yellow-piece {
+    color: yellow;
 }
 
 .row {
     margin: 10px;
 }
-
-
 
 .records {
     margin-left: 60px;
@@ -45,3 +47,19 @@
     font-size: 20px;
 }
 
+.peg:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.double-peg1 {
+    margin-left: 35px;
+}
+
+.double-peg2 {
+    margin-right: 35px;
+}
+
+.middle-peg {
+    background-color: white;
+}
