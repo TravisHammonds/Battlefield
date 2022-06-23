@@ -3,6 +3,10 @@
     margin-top: 5%;
 }
 
+#reset:hover {
+    cursor: pointer;
+}
+
 .puzzles {
     margin-right: 60px;
 }
@@ -24,12 +28,16 @@
     text-align: center;
 }
 
-.green-piece {
+[title = "green"] {
     color: darkgreen;
 }
 
-.yellow-piece {
+[title = "yellow"] {
     color: yellow;
+}
+
+.open {
+    color: black;
 }
 
 .row {
@@ -60,6 +68,5 @@
     margin-right: 35px;
 }
 
-.middle-peg {
-    background-color: white;
-}
+
+

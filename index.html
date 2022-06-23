@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!--CSS Stylesheet-->
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
     <title>Wooden Battlefield</title>
 </head>
 
@@ -31,7 +31,7 @@
                             <a class="nav-link active" aria-current="page" href="#">New Game</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Reset</a>
+                            <a id="reset" class="nav-link">Reset</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav navbar-collapse class=d-flex flex-row-reverse">
@@ -57,84 +57,84 @@
                 <div class="col-6 board container">
                     <div class="board-top conatiner">
                         <div class="single-row row">
-                            <i id=g1 class="green-piece fa-solid fa-circle fa-3x peg"></i>
+                            <i id=g1 title="green" class="fa-solid fa-circle fa-3x peg"></i>
                         </div>
                         <div class="row double-row">
                             <div class="col-6">
-                                <i id=g2 class="green-piece fa-solid fa-circle fa-3x peg double-peg1"></i>
+                                <i id=g2 title="green" class="fa-solid fa-circle fa-3x peg double-peg1"></i>
                             </div>
                             <div class="col-6">
-                                <i id=g3 class="green-piece fa-solid fa-circle fa-3x peg double-peg2"></i>
+                                <i id=g3 title="green" class="fa-solid fa-circle fa-3x peg double-peg2"></i>
                             </div>
                         </div>
                         <div class="row triple-row">
                             <div class="col">
-                                <i id=g4 class="green-piece fa-solid fa-circle fa-3x peg"></i>
+                                <i id=g4 title="green" class="fa-solid fa-circle fa-3x peg"></i>
                             </div>
                             <div class="col-6">
-                                <i id=g5 class="green-piece fa-solid fa-circle fa-3x peg"></i>
+                                <i id=g5 title="green" class="fa-solid fa-circle fa-3x peg"></i>
                             </div>
                             <div class="col">
-                                <i id=g6 class="green-piece fa-solid fa-circle fa-3x peg"></i>
+                                <i id=g6  title="green" class="fa-solid fa-circle fa-3x peg"></i>
                             </div>
                         </div>
                         <div class="row double-row">
                             <div class="col-6">
-                                <i id=g7 class="green-piece fa-solid fa-circle fa-3x peg double-peg1"></i>
+                                <i id=g7 title="green" class="fa-solid fa-circle fa-3x peg double-peg1"></i>
                             </div>
                             <div class="col-6">
-                                <i id=g8 class="green-piece fa-solid fa-circle fa-3x peg double-peg2"></i>
+                                <i id=g8 title="green" class="fa-solid fa-circle fa-3x peg double-peg2"></i>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <i id=open-space class="fa-solid fa-circle fa-3x middle-peg"></i>
+                        <i id=open-space title="open" class="fa-solid fa-circle fa-3x open"></i>
                     </div>
                     <div class="board-bottom conatiner">
                         <div class="row double-row">
                             <div class="col-6">
-                                <i id=y8 class="yellow-piece fa-solid fa-circle fa-3x peg double-peg1"></i>
+                                <i id=y8 title="yellow" class="fa-solid fa-circle fa-3x peg double-peg1"></i>
                             </div>
                             <div class="col-6">
-                                <i id=y7 class=" yellow-piece fa-solid fa-circle fa-3x peg double-peg2"></i>
+                                <i id=y7 title="yellow" class=" fa-solid fa-circle fa-3x peg double-peg2"></i>
                             </div>
                         </div>
                         <div class="row triple-row">
                             <div class="col">
-                                <i id=y6 class="yellow-piece fa-solid fa-circle fa-3x peg"></i>
+                                <i id=y6 title="yellow" class="fa-solid fa-circle fa-3x peg"></i>
                             </div>
                             <div class="col-6">
-                                <i id=y5 class="yellow-piece fa-solid fa-circle fa-3x peg"></i>
+                                <i id=y5 title="yellow" class="fa-solid fa-circle fa-3x peg"></i>
                             </div>
                             <div class="col">
-                                <i id=y4 class="yellow-piece fa-solid fa-circle fa-3x peg"></i>
+                                <i id=y4 title="yellow" class="fa-solid fa-circle fa-3x peg"></i>
                             </div>
                         </div>
                         <div class="row double-row">
                             <div class="col-6">
-                                <i id=y3 class="yellow-piece fa-solid fa-circle fa-3x peg double-peg1"></i>
+                                <i id=y3 title="yellow" class="fa-solid fa-circle fa-3x peg double-peg1"></i>
                             </div>
                             <div class="col-6">
-                                <i id=y2 class="yellow-piece fa-solid fa-circle fa-3x peg double-peg2"></i>
+                                <i id=y2 title="yellow" class="fa-solid fa-circle fa-3x peg double-peg2"></i>
                             </div>
                         </div>
                         <div class="single-row row">
-                            <i id=y1 class="yellow-piece fa-solid fa-circle fa-3x peg"></i>
+                            <i id=y1 title="yellow" class="fa-solid fa-circle fa-3x peg"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col records list-group">
-                    <a class="records-list list-group-item list-group-item-action" href="#">Time</a>
-                    <a class="records-list list-group-item list-group-item-action" href="#">Best</a>
-                    <a class="records-list list-group-item list-group-item-action" href="#">Moves</a>
-                    <a class="records-list list-group-item list-group-item-action" href="#">Best</a>
+                    <a class="records-list list-group-item list-group-item-action" href="#">Time: 0:00</a>
+                    <a class="records-list list-group-item list-group-item-action" href="#">Best: 0:00</a>
+                    <a class="records-list list-group-item list-group-item-action" href="#">Moves: 0</a>
+                    <a class="records-list list-group-item list-group-item-action" href="#">Best: 0</a>
                 </div>
             </div>
     </section>
 
     <script $(document).ready(function() { src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" });>
     </script>
-    <script type="text/javascript" src="battlefield.js"></script>
+    <!-- <script type="text/javascript" src="battlefield.js"></script> -->
     <script type="text/javascript" src="index.js"></script>
 </body>
 
