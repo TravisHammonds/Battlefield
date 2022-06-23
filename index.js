@@ -1,19 +1,25 @@
-
 let selectedPegClicked = false;
 let moves = 0;
 let selectedPeg;
 let selectedPegColor;
 let selectedPegId;
 let openSpace = $(".open");
+let timer = $("#timer");
+let timerInterval;
+let gameStart = false;
 
-console.log(selectedPegClicked, moves, selectedPeg, selectedPegColor, 
-    selectedPegId, openSpace);
+$(document).on('click', "#new-game", function () {
+    gameStart = true;
+    startTimer();
+});
 
 $(document).on('click', '.peg', function () {
-    selectedPeg = $(this);
-    selectedPegColor = $(this).attr("title");
-    selectedPegClicked = true;
-    selectedPegId = selectedPeg.attr("id");
+    if (gameStart === true) {
+        selectedPeg = $(this);
+        selectedPegColor = $(this).attr("title");
+        selectedPegClicked = true;
+        selectedPegId = selectedPeg.attr("id");
+    }
 });
 
 $(document).on('click', '.open', function () {
@@ -22,7 +28,8 @@ $(document).on('click', '.open', function () {
         addPegClass(openSpace);
         removeOpenClass(openSpace)
         makeOpen(selectedPeg);
-        resetVariables();
+        nextSequence();
+        increaseMoves();
     }
 });
 
@@ -36,37 +43,38 @@ function makeOpen(peg) {
     $(peg).attr("title", "");
 }
 
-function resetVariables() {
+function nextSequence() {
     selectedPegClicked = false;
-    moves++;
     selectedPeg = undefined;
     selectedPegColor = undefined;
     selectedPegId = undefined;
     openSpace = $(".open");
     console.log("new variables:");
-    console.log(selectedPegClicked, moves, selectedPeg, selectedPegColor, 
-    selectedPegId, openSpace);
+    console.log(selectedPegClicked, moves, selectedPeg, selectedPegColor,
+        selectedPegId, openSpace);
 }
 
 function resetBoard() {
-    resetVariables();
-    for (i=1; i<=8; i++) {
-        var greenSpaceReset = $("#g"+i);
+    nextSequence();
+    resetTimer();
+    resetMoves();
+    for (i = 1; i <= 8; i++) {
+        var greenSpaceReset = $("#g" + i);
         var color = 'green';
         addPegClass(greenSpaceReset);
         removeOpenClass(greenSpaceReset);
         makeColoredSpace(greenSpaceReset, color);
     }
 
-    for (i=1; i<=8; i++) {
-        var yellowSpaceReset = $("#y"+i);
+    for (i = 1; i <= 8; i++) {
+        var yellowSpaceReset = $("#y" + i);
         var color = 'yellow';
         addPegClass(yellowSpaceReset);
         removeOpenClass(yellowSpaceReset);
         makeColoredSpace(yellowSpaceReset, color);
     }
 
-    makeOpen($("#open-space")); 
+    makeOpen($("#open-space"));
 }
 
 function addPegClass(peg) {
@@ -79,9 +87,33 @@ function removeOpenClass(peg) {
 
 function makeColoredSpace(peg, color) {
     $(peg).attr("title", color);
-
 }
 
 function increaseMoves() {
-    
+    moves++;
+    $("#moves").text("Moves: " + moves);
+}
+
+function resetMoves() {
+    moves = 0;
+    $("#moves").text("Moves: " + moves);
+}
+
+//Timer
+function startTimer() {
+    var sec = 0;
+
+    function pad(val) {
+        return val > 9 ? val : "0" + val;
+    }
+    timerInterval = setInterval(function () {
+        $("#seconds").html(pad(++sec % 60));
+        $("#minutes").html(pad(parseInt(sec / 60, 10)));
+    }, 1000);
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    $("#seconds").html("00");
+    $("#minutes").html("00");
 }

@@ -1,9 +1,12 @@
-
-.main-content{
+.main-content {
     margin-top: 5%;
 }
 
 #reset:hover {
+    cursor: pointer;
+}
+
+#new-game:hover {
     cursor: pointer;
 }
 
@@ -28,11 +31,11 @@
     text-align: center;
 }
 
-[title = "green"] {
+[title="green"] {
     color: darkgreen;
 }
 
-[title = "yellow"] {
+[title="yellow"] {
     color: yellow;
 }
 
@@ -67,6 +70,3 @@
 .double-peg2 {
     margin-right: 35px;
 }
-
-
-
