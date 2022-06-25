@@ -31,11 +31,11 @@
     text-align: center;
 }
 
-[title="green"] {
+.green{
     color: darkgreen;
 }
 
-[title="yellow"] {
+.yellow {
     color: yellow;
 }
 
